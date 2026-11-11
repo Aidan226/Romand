@@ -1,0 +1,1155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap');
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background: #fff9f8;
+    color: #333;
+}
+
+
+/* =========================================================
+   HEADER / NAVIGATION
+========================================================= */
+
+header {
+    background: #fff;
+    padding: 18px 24px;
+    border-bottom: 1px solid #eee;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d85a7f;
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================================================
+   FORMS & INPUTS
+========================================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d7ccd0;
+    border-radius: 7px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    background: #333;
+    color: #fff;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    font: inherit;
+}
+
+.btn.primary {
+    background: #d85a7f;
+}
+
+.btn:hover {
+    opacity: 0.88;
+}
+
+
+/* =========================================================
+   PRODUCT DETAIL PAGE
+========================================================= */
+
+.category-products-page,
+.product-detail-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 55px 35px;
+}
+
+.back-link {
+    color: #d85a7f;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.product-detail-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+    gap: 50px;
+    align-items: start;
+}
+
+
+/* =========================================================
+   LEFT - PRODUCT GALLERY
+========================================================= */
+
+.product-gallery {
+    position: relative;
+    width: 100%;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.product-gallery img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 18px;
+}
+
+.gallery-arrow {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    transform: translateY(-50%);
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ead8dd;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    color: #d85a7f;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.gallery-arrow:hover {
+    background: #d85a7f;
+    color: #fff;
+    transform: translateY(-50%) scale(1.05);
+}
+
+.gallery-arrow-left {
+    left: 18px;
+}
+
+.gallery-arrow-right {
+    right: 18px;
+}
+
+.gallery-position {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    padding: 7px 13px;
+    border-radius: 20px;
+    background: rgba(30, 25, 27, 0.75);
+    color: #fff;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RIGHT - PRODUCT INFORMATION
+========================================================= */
+
+.product-information {
+    width: 100%;
+    padding: 0;
+}
+
+.product-tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #fff0f3;
+    color: #d85a7f;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.product-information h1 {
+    margin: 5px 0 12px;
+    font-size: 2rem;
+    color: #333;
+    line-height: 1.25;
+}
+
+.detail-rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.detail-rating span {
+    color: #f15c9a;
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+}
+
+.detail-rating small {
+    color: #83767a;
+}
+
+.detail-price {
+    margin: 10px 0 25px;
+    color: #d85a7f;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SHADE SELECTOR
+========================================================= */
+
+.shade-selector {
+    border: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.shade-selector legend {
+    margin-bottom: 12px;
+    color: #4d3b41;
+    font-size: 15px;
+}
+
+#selected-shade-name {
+    color: #d85a7f;
+    font-weight: 700;
+}
+
+.shade-options {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+    padding: 5px 3px 14px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+}
+
+.shade-options::-webkit-scrollbar {
+    display: none;
+}
+
+.shade-option {
+    position: relative;
+    flex: 0 0 auto;
+    width: 92px;
+    min-height: 88px;
+    padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1.5px solid #ded5d8;
+    border-radius: 14px;
+    background: #fff;
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.shade-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.shade-circle {
+    display: block;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.shade-name {
+    display: block;
+    max-width: 100%;
+    color: #4d3b41;
+    font-size: 11px;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.shade-option:hover {
+    border-color: #d85a7f;
+    transform: translateY(-2px);
+}
+
+.shade-option.active {
+    border: 2px solid #d85a7f;
+    background: #fff1f5;
+    box-shadow: 0 0 0 3px rgba(216, 90, 127, 0.12);
+    transform: translateY(-2px);
+}
+
+.shade-option.active .shade-name {
+    color: #d85a7f;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   QUANTITY
+========================================================= */
+
+.quantity-section {
+    margin: 25px 0 20px;
+}
+
+.quantity-section > label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4d3b41;
+    font-weight: 600;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border: 1px solid #d7ccd0;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.qty-btn {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: #fff;
+    color: #d85a7f;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.qty-btn:hover {
+    background: #fff0f3;
+}
+
+.qty-btn:disabled {
+    color: #ccc;
+    background: #f9f9f9;
+    cursor: not-allowed;
+}
+
+.quantity-controls input {
+    width: 58px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    border-left: 1px solid #d7ccd0;
+    border-right: 1px solid #d7ccd0;
+    border-radius: 0;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    outline: none;
+}
+
+
+/* =========================================================
+   PRICE CALCULATION
+========================================================= */
+
+.price-calculation-box {
+    width: 100%;
+    margin: 20px 0;
+    padding: 18px;
+    border: 1px solid #f0e2e6;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.calc-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 0.95rem;
+}
+
+.calc-label {
+    color: #806c72;
+}
+
+.calc-value {
+    color: #333;
+    font-weight: 500;
+}
+
+.calc-divider {
+    height: 1px;
+    margin: 8px 0;
+    background: #f0e2e6;
+}
+
+.calc-total {
+    padding-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.calc-total .calc-label {
+    color: #333;
+    font-weight: 700;
+}
+
+.calc-total .calc-value {
+    color: #d85a7f;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MIX & MATCH
+========================================================= */
+
+.mix-match-box,
+.product-information .mix-match-box {
+    background: #fff0f3;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #f3d9e0;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    color: #5e4c51;
+}
+
+.product-information .mix-match-box strong {
+    color: #d85a7f;
+}
+
+
+/* =========================================================
+   ADD TO CART
+========================================================= */
+
+.add-to-cart-button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 999px;
+    background: #d85a7f;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-to-cart-button:hover {
+    background: #c94d72;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+    .product-detail-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .product-gallery {
+        height: 500px;
+    }
+}
+
+/* Container ကို Flexbox သုံးပြီး ၃ ကန့်ခွဲမယ် */
+.category-layout {
+    display: flex;
+    gap: 24px; /* အကန့်တစ်ခုနဲ့တစ်ခု ကြားအကွာအဝေး */
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+/* Card တစ်ခုချင်းစီရဲ့ Design */
+.category-card {
+    flex: 1; /* ၃ ကန့်ကို အရွယ်အစား တူညီအောင်ထားမယ် */
+    padding: 30px 24px;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    text-decoration: none; /* Link ရဲ့ အောက်ခြေမျဉ်းသားတာကို ဖျောက်မယ် */
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease; /* Hover effect ကို smooth ဖြစ်စေဖို့ */
+    display: flex;
+    flex-direction: column; /* အထဲက စာသားတွေကို အပေါ်အောက် စီမယ် */
+}
+
+/* Card ကို Mouse တင်လိုက်ရင် အပေါ်ကို ကြွလာမယ့် Effect */
+.category-card:hover {
+    transform: translateY(-8px); /* အပေါ်ကို နည်းနည်းတက်သွားမယ် */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* အရိပ်ထည့်မယ် */
+    border-color: #f7cac9; /* rom&nd website နဲ့လိုက်မယ့် ပန်းရောင်ဖျော့ဖျော့လေး */
+}
+
+/* Icon အရွယ်အစား */
+.category-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+/* ခေါင်းစဉ် (Glossy Tint, etc.) */
+.category-card h3 {
+    margin: 0 0 10px 0;
+    color: #111;
+    font-size: 20px;
+}
+
+/* အသေးစိတ်စာသားများ */
+.category-card p {
+    margin: 0 0 20px 0;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1; /* စာသားအနည်းအများမတူရင်တောင် View Products စာသားကို အောက်ခြေမှာ ညီနေအောင် တွန်းထားပေးဖို့ */
+}
+
+/* View Products စာသား */
+.category-link {
+    color: #d15c7a; /* rom&nd theme color လေးနဲ့ လိုက်ဖက်အောင် */
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: auto; 
+}
+
+/* Product တွေကို ၃ ကန့် ဘေးတိုက်စီရန် (CSS Grid အသုံးပြုခြင်း) */
+.store-product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* အကန့် ၃ ခု တူညီအောင် ခွဲမယ် */
+    gap: 30px; /* Card တစ်ခုနဲ့တစ်ခုကြား အကွာအဝေး */
+    margin-top: 30px;
+}
+
+/* Product Card တစ်ခုချင်းစီရဲ့ Design */
+.store-product-card {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Effect */
+.store-product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ပုံအရွယ်အစား ညှိရန် */
+.product-image-link img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain; /* ပုံမပိန့်သွားအောင် */
+    margin-bottom: 15px;
+}
+
+/* နာမည်နဲ့ ဈေးနှုန်း အထားအသို */
+.store-product-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.store-product-card h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.product-rating {
+    color: #ffc107; /* ကြယ်အရောင် အဝါလေး */
+    margin-bottom: 10px;
+}
+
+.price {
+    font-weight: bold;
+    color: #d15c7a;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Swatches လေးတွေ အစီအစဉ်တကျဖြစ်အောင် */
+.swatches {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: inline-block;
+}
+
+/* View Product Button ကို အောက်ဆုံးရောက်အောင် တွန်းထားဖို့ */
+.view-product-button {
+    margin-top: auto;
+    background-color: #f7cac9;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.view-product-button:hover {
+    background-color: #d15c7a;
+    color: #fff;
+}
+
+/* ဖုန်းတွေမှာဆိုရင် တစ်ကန့်တည်းပေါ်အောင် ညှိပေးခြင်း (Responsive) */
+@media (max-width: 900px) {
+    .store-product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Tablet မှာ ၂ ကန့် */
+    }
+}
+
+@media (max-width: 600px) {
+    .store-product-grid {
+        grid-template-columns: 1fr; /* ဖုန်းမှာ ၁ ကန့် */
+    }
+}
+
+/* Shopping Cart ခေါင်းစဉ် */
+.container h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f7cac9; /* ပန်းရောင်မျဉ်းလေး တားမယ် */
+    padding-bottom: 10px;
+}
+
+/* Discount စာသားလေး ပိုပေါ်လွင်အောင် */
+.discount-banner {
+    background-color: #fff0f5;
+    color: #d15c7a;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-size: 15px;
+    border: 1px solid #f7cac9;
+}
+
+/* Cart ထဲက ပစ္စည်းတွေကို အပေါ်အောက် စီမယ် */
+.cart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* ပစ္စည်းတစ်ခုချင်းစီကို ဘေးတိုက် (Row) ပုံစံ ဖြစ်အောင်စီမယ် */
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+/* Product အချက်အလက် နေရာပိုယူဖို့ */
+.cart-item div:first-child {
+    flex: 2; 
+}
+
+.cart-item h3 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #222;
+}
+
+.cart-item p {
+    margin: 0;
+    color: #777;
+    font-size: 14px;
+}
+
+/* အရေအတွက် (Quantity) ရွေးတဲ့ အပိုင်း */
+.quantity-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+}
+
+.quantity-form label {
+    display: none; /* UI ရှင်းသွားအောင် Quantity စာသားကို ဖျောက်ထားမယ် */
+}
+
+.quantity-form input {
+    width: 60px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-align: center;
+}
+
+/* ပစ္စည်းတစ်ခုချင်းစီရဲ့ ကျသင့်ငွေ */
+.cart-item strong {
+    flex: 1;
+    text-align: right;
+    font-size: 16px;
+    color: #d15c7a;
+}
+
+/* Buttons အထွေထွေဒီဇိုင်း */
+.btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.quantity-form .btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.quantity-form .btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Remove Button (အနီရောင်) */
+.btn-danger {
+    background-color: #fff;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+/* စုစုပေါင်း ကျသင့်ငွေကို ညာဘက်ကပ်မယ် */
+.container > p {
+    text-align: right;
+    margin: 8px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.container > h3 {
+    text-align: right;
+    color: #d15c7a;
+    font-size: 24px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+/* အောက်ဆုံးက Clear Cart နဲ့ Checkout ကို ညာဘက်ကပ်မယ် */
+.cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    padding: 12px 20px;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Checkout Button (အဓိက Button) */
+.btn.primary {
+    background-color: #d15c7a;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+}
+
+.btn.primary:hover {
+    background-color: #b04961;
+}
+
+/* Checkout Page Container ကို အလယ်မှာ သပ်သပ်ရပ်ရပ်လေး ပေါ်အောင်လုပ်မယ် */
+.container.checkout {
+    max-width: 600px; /* Form ကြီး အရမ်းကျယ်မသွားအောင် ထိန်းထားမယ် */
+    margin: 40px auto;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+.container.checkout h2 {
+    text-align: center;
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f7cac9;
+    padding-bottom: 10px;
+}
+
+/* Error စာသားတွေပေါ်လာရင် ထင်းနေအောင် အနီရောင်ဖျော့ဖျော့လေးပြမယ် */
+.validation-errors {
+    background-color: #fff0f0;
+    border-left: 4px solid #dc3545;
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 6px;
+}
+
+.validation-errors p {
+    color: #dc3545;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Form ထဲက Input တွေကို အပေါ်အောက် စီမယ် */
+.shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.shipping-form h3 {
+    color: #444;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* စာရိုက်သွင်းရမယ့် အကွက် (Inputs & Textarea) တွေရဲ့ ဒီဇိုင်း */
+.shipping-form input[type="text"],
+.shipping-form input[type="tel"],
+.shipping-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+}
+
+.shipping-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Input အကွက်ကို Click နှိပ်လိုက်တဲ့အခါ ပန်းရောင်ဘောင်လေး လင်းလာအောင်လုပ်မယ် */
+.shipping-form input:focus,
+.shipping-form textarea:focus {
+    outline: none;
+    background-color: #fff;
+    border-color: #d15c7a;
+    box-shadow: 0 0 0 3px rgba(209, 92, 122, 0.15);
+}
+
+/* စုစုပေါင်း ကျသင့်ငွေကို အောက်ဆုံး ညာဘက်မှာ ထင်းနေအောင် ပြမယ် */
+.shipping-form h3:last-of-type {
+    text-align: right;
+    color: #d15c7a;
+    font-size: 24px;
+    border-top: 1px solid #eaeaea;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+/* Confirm Order Button အကြီးကြီး */
+.shipping-form .btn.primary {
+    width: 100%; /* Button ကို Form အပြည့်ဆွဲဆန့်မယ် */
+    padding: 16px;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 4px 10px rgba(209, 92, 122, 0.2);
+}
+
+
+/* Homepage က ကတ်တွေထဲက ဓာတ်ပုံတွေကို အရွယ်အစားညှိရန် */
+.category-image {
+    width: 100%; /* ကတ်ရဲ့ အကျယ်အပြည့်ယူမယ် */
+    height: 250px; /* ပုံတွေအားလုံး အမြင့် တစ်ပြေးညီဖြစ်အောင် သတ်မှတ်မယ် (လိုသလို အတိုးအလျှော့ လုပ်နိုင်ပါတယ်) */
+    object-fit: cover; /* ပုံတွေရှည်ထွက်တာ၊ ပိန့်သွားတာမျိုးမဖြစ်အောင် အချိုးကျဖြတ်ပြမယ် */
+    border-radius: 8px; /* ပုံရဲ့ ထောင့်လေးတွေ ဝိုင်းသွားအောင် */
+    margin-bottom: 15px; /* ပုံနဲ့ အောက်က ခေါင်းစဉ်ကြား အကွာအဝေး */
+}
+
+/* Category Card ကိုယ်တိုင်ရဲ့ အတွင်းပိုင်း အထားအသို */
+.category-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    /* အရင်ကရေးထားတဲ့ border တွေ၊ padding တွေ ရှိရင် ဆက်ထားပါ */
+}
+
+.category-card h3 {
+    margin-top: 0;
+}
+
+/* View Products စာသားကို အောက်ဆုံးရောက်အောင် တွန်းထားဖို့ */
+.category-link {
+    margin-top: auto; 
+    color: #d15c7a;
+    font-weight: 600;
+}
+
+/* Website တစ်ခုလုံးရဲ့ အခြေခံ စာသားစတိုင် */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* =========================================
+   Hero Section (အပေါ်ဆုံးက ခေါင်းစဉ်ကြီး) 
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fffafb; /* rom&nd လို ပန်းရောင်ဖျော့ဖျော့ နောက်ခံလေး */
+    border-bottom: 1px solid #fceef0;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif; /* ခေါင်းစဉ်ကို အထာကျကျလေးဖြစ်အောင်ပြောင်းမယ် */
+    font-size: 46px;
+    color: #222;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+    font-weight: 300; /* စာလုံးကို နည်းနည်းပါးသွားအောင်လုပ်မယ် */
+}
+
+/* Hero Section က Shop Collection Button */
+.cta-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #d15c7a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 30px; /* ဘဲဥပုံစံ ခလုတ်လေး */
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #b04961;
+}
+
+/* =========================================
+   Featured Products ခေါင်းစဉ် (H2) 
+   ========================================= */
+.catalog-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    color: #333;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+/* ခေါင်းစဉ်အောက်က အလှဆင် မျဉ်းတိုလေး */
+.catalog-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #d15c7a; 
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+/* =========================================
+   Category Card ထဲက ခေါင်းစဉ်နဲ့ စာသားများ (H3 & p) 
+   ========================================= */
+.category-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+    margin: 15px 0 10px;
+}
+
+.category-card p {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.5; /* စာကြောင်းတွေ ပြွတ်သိပ်မနေအောင် ကြားအကွာအဝေးချဲ့မယ် */
+    margin-bottom: 20px;
+}
+
+/* Shade Option Container */
+.shade-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap; /* ဖုန်းနဲ့ကြည့်ရင် အောက်ဆင်းသွားအောင် */
+    margin-top: 15px;
+}
+/* ကတ်တစ်ခုလုံးရဲ့ အပြင်ဘောင် ဒီဇိုင်း */
+.shade-option {
+    cursor: pointer;
+    text-align: center;
+    width: 85px;
+    padding: 12px 5px;
+    border: 2px solid #eaeaea; /* မူလ အပြင်ဘောင် ခဲရောင်ဖျော့ဖျော့ */
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Mouse တင်လိုက်ရင် အပေါ်နည်းနည်းကြွလာမယ် */
+.shade-option:hover {
+    transform: translateY(-3px);
+}
+
+/* အရောင်ရွေးလိုက်တဲ့အခါ (Active ဖြစ်သွားတဲ့အခါ) အပြင်ဘောင်ကို ပန်းရောင်ပြောင်းမယ် */
+.shade-option.active {
+    border-color: #d15c7a;
+    box-shadow: 0 4px 10px rgba(209, 92, 122, 0.15);
+    transform: scale(1.05); /* ရွေးလိုက်ရင် ကတ်လေး နည်းနည်းကြီးလာမယ် */
+}
+
+/* မူလ Radio Button ကို ဖျောက်ထားမယ် */
+.shade-option input[type="radio"] {
+    display: none;
+}
+
+/* အထဲက နှုတ်ခမ်းနီ ဓာတ်ပုံလေးရဲ့ ဒီဇိုင်း (ဘောင် ၂ ထပ်မဖြစ်အောင် ဘောင်ကို ဖြုတ်လိုက်ပါပြီ) */
+.shade-img-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px; /* ပုံရဲ့ထောင့်လေးတွေပဲ ဝိုင်းသွားမယ် */
+    margin-bottom: 8px; /* စာသားနဲ့ ပုံကြား အကွာအဝေး */
+}
+
+/* အရောင်နာမည် စာသား */
+.shade-option .shade-name {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+}
+
+/* ရွေးထားတဲ့ အရောင်နာမည်စာသားကို ပန်းရောင်လေး ပြောင်းမယ် */
+.shade-option.active .shade-name {
+    color: #d15c7a;
+    font-weight: bold;
+}

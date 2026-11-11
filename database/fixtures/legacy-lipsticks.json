@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "name": "Juicy Lasting Tint - Honey Dew Melon",
+    "category": "Glossy & Dewy",
+    "price": 18500.0,
+    "stock": 13
+  },
+  {
+    "id": 2,
+    "name": "Juicy Lasting Tint - Bare Marron",
+    "category": "Glossy & Dewy",
+    "price": 18500.0,
+    "stock": 15
+  },
+  {
+    "id": 3,
+    "name": "Juicy Lasting Tint - Black Berry",
+    "category": "Glossy & Dewy",
+    "price": 18500.0,
+    "stock": 15
+  },
+  {
+    "id": 4,
+    "name": "Juicy Lasting Tint - Snow Strawberry",
+    "category": "Glossy & Dewy",
+    "price": 18500.0,
+    "stock": 15
+  },
+  {
+    "id": 5,
+    "name": "Juicy Lasting Tint - MyStic Peach",
+    "category": "Glossy & Dewy",
+    "price": 18500.0,
+    "stock": 15
+  },
+  {
+    "id": 6,
+    "name": "Glasting Water Tint - Rose Splash",
+    "category": "Glossy & Dewy",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 7,
+    "name": "Glasting Water Tint - Coral Mist",
+    "category": "Glossy & Dewy",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 8,
+    "name": "Glasting Water Tint - Berry Divine",
+    "category": "Glossy & Dewy",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 9,
+    "name": "Dewy-Ful Water Tint - Dewy Pink",
+    "category": "Glossy & Dewy",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 10,
+    "name": "Dewy-Ful Water Tint - Peach Mocha",
+    "category": "Glossy & Dewy",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 11,
+    "name": "Dewy-Ful Water Tint - Mauve Moon",
+    "category": "Glossy & Dewy",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 12,
+    "name": "Zero Velvet Tint - Burny Nude",
+    "category": "Velvet & Matte",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 13,
+    "name": "Zero Velvet Tint - Joyful",
+    "category": "Velvet & Matte",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 14,
+    "name": "Zero Velvet Tint - Deep Soul",
+    "category": "Velvet & Matte",
+    "price": 20000.0,
+    "stock": 13
+  },
+  {
+    "id": 15,
+    "name": "Blur Fudge Tint - Pomeloco",
+    "category": "Velvet & Matte",
+    "price": 21000.0,
+    "stock": 15
+  },
+  {
+    "id": 16,
+    "name": "Blur Fudge Tint - Rosiental",
+    "category": "Velvet & Matte",
+    "price": 21000.0,
+    "stock": 15
+  },
+  {
+    "id": 17,
+    "name": "Blur Fudge Tint - Mauvy Night",
+    "category": "Velvet & Matte",
+    "price": 21000.0,
+    "stock": 15
+  },
+  {
+    "id": 18,
+    "name": "Zero Matte Lipstick - Coco Nude",
+    "category": "Velvet & Matte",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 19,
+    "name": "Zero Matte Lipstick - Nougat Sand",
+    "category": "Velvet & Matte",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 20,
+    "name": "Zero Matte Lipstick - Current Jam",
+    "category": "Velvet & Matte",
+    "price": 20000.0,
+    "stock": 15
+  },
+  {
+    "id": 21,
+    "name": "Glasting Melting Balm - Coco Nude",
+    "category": "Balm & Care",
+    "price": 22000.0,
+    "stock": 15
+  },
+  {
+    "id": 22,
+    "name": "Glasting Melting Balm - Sorbet Balm",
+    "category": "Balm & Care",
+    "price": 22000.0,
+    "stock": 15
+  },
+  {
+    "id": 23,
+    "name": "Glasting Melting Balm - Kare Mauve",
+    "category": "Balm & Care",
+    "price": 22000.0,
+    "stock": 15
+  }
+]
