@@ -10,3 +10,4 @@
 /public/storage
 /bootstrap/cache/*.php
 /public/uploads/
+cloudflared.exe
