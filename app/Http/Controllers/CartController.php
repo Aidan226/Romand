@@ -193,7 +193,10 @@ class CartController extends Controller
             }
         }
 
-        // Automatic KPay Slip Verification (Exception-Based)
+        return $order;
+        });
+
+        // Automatic KPay Slip Verification (Exception-Based) after DB lock is released
         $isAutoApproved = false;
         if ($request->payment_method === 'kpay' && $paymentScreenshotPath) {
             try {
@@ -206,11 +209,22 @@ class CartController extends Controller
                     'payment_status' => $isAutoApproved ? 'Paid' : 'Under Review',
                     'transaction_id' => $verification['transaction_id'] ?? null,
                     'slip_detected_amount' => $verification['detected_amount'] ?? null,
+                    'slip_detected_recipient' => $verification['detected_recipient'] ?? null,
                     'slip_verification_status' => $verification['status'] ?? null,
                     'slip_verification_notes' => $verification['notes'] ?? null,
                 ]);
             } catch (\Throwable $e) {
                 \Illuminate\Support\Facades\Log::error('KPay verification failed: ' . $e->getMessage());
+                try {
+                    $order->refresh();
+                    $order->update([
+                        'status' => 'Pending',
+                        'payment_status' => 'Under Review',
+                        'slip_verification_status' => 'unreadable',
+                        'slip_verification_notes' => 'Automated verification encountered an error. Manual admin review required.',
+                    ]);
+                } catch (\Throwable $ignored) {
+                }
             }
         }
 
@@ -230,13 +244,15 @@ class CartController extends Controller
             ]);
         }
 
-        return $order;
-        });
         session()->forget('cart');
 
-        $successMsg = ($order->payment_method === 'kpay' && $order->status === 'Processing')
-            ? 'Order placed and payment automatically verified! Your order is now Processing.'
-            : 'Order placed successfully. Your order is currently Pending.';
+        if ($order->payment_method === 'kpay' && $order->status === 'Processing') {
+            $successMsg = 'Order placed and payment automatically verified! Your order is now Processing.';
+        } elseif ($order->payment_method === 'kpay') {
+            $successMsg = 'Order placed. Payment verification flagged for admin review.';
+        } else {
+            $successMsg = 'Order placed successfully. Your order is currently Pending.';
+        }
 
         return redirect()->route('orders.show', $order)->with('success', $successMsg);
     }

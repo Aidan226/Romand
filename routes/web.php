@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');
     Route::post('/order/confirm', [CartController::class, 'confirmOrder'])->name('order.confirm');
     Route::get('/profile', [AuthController::class, 'profile'])->name('profile');
+    Route::post('/profile', [AuthController::class, 'updateProfile'])->name('profile.update');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/notifications', [NotificationController::class, 'index'])->name('notifications.index');
     Route::get('/notifications/{notification}', [NotificationController::class, 'open'])->name('notifications.open');
@@ -60,7 +61,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/customers', [AdminController::class, 'customers'])->name('customers.index');
 });
 
-Route::get('/shade-finder', fn() => redirect()->route('home')->with('success', 'Choose a product, then open its camera check below the shades.'))->name('shade.finder');
+Route::get('/shade-finder', [\App\Http\Controllers\ShadeFinderController::class, 'index'])->name('shade.finder');
 Route::post('/shade-finder', [\App\Http\Controllers\ShadeFinderController::class,'analyze'])->middleware('throttle:30,1')->name('shade.analyze');
 Route::post('/shade-feedback', [\App\Http\Controllers\ShadeFinderController::class,'feedback'])->middleware('auth')->name('shade.feedback');
 Route::delete('/shade-profile', [\App\Http\Controllers\ShadeFinderController::class,'clearProfile'])->middleware('auth')->name('shade.profile.delete');

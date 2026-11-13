@@ -45,6 +45,19 @@ button, input, select, textarea {
     border-right: 1px solid var(--line);
     box-shadow: none;
     padding-top: 32px;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    scrollbar-width: thin;
+    scrollbar-color: #ebdcd7 transparent;
+    z-index: 100;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: #ebdcd7;
+    border-radius: 4px;
 }
 
 .brand {
@@ -90,6 +103,45 @@ button, input, select, textarea {
 .main {
     padding: 40px;
     max-width: none;
+    transition: margin-left 0.28s cubic-bezier(0.4, 0, 0.2, 1), width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wrap.sidebar-collapsed .sidebar {
+    transform: translateX(-100%);
+}
+
+.wrap.sidebar-collapsed .main {
+    margin-left: 0;
+    width: 100%;
+}
+
+.sidebar-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    color: var(--ink);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.sidebar-toggle-btn:hover {
+    background: #fdf2f4;
+    border-color: var(--pink);
+    color: var(--pink);
+    transform: scale(1.03);
+}
+
+.top-left-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .top {
@@ -244,8 +296,13 @@ input:focus, select:focus, textarea:focus {
 
 </head>
 <body>
-<div class="wrap">
-    <aside class="sidebar">
+<div class="wrap" id="admin-wrap">
+    <script>
+        if (localStorage.getItem('admin_sidebar_collapsed') === 'true') {
+            document.getElementById('admin-wrap').classList.add('sidebar-collapsed');
+        }
+    </script>
+    <aside class="sidebar" id="admin-sidebar">
         <div class="brand">rom&nd<small>Store Administration</small></div>
         <div class="nav-title">Overview</div>
         <a href="{{ route('admin.dashboard') }}" class="{{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"><span class="nav-dot"></span>Dashboard</a>
@@ -259,13 +316,39 @@ input:focus, select:focus, textarea:focus {
         <form method="POST" action="{{ route('logout') }}" style="margin-top:20px;">@csrf<button type="submit" class="btn muted" style="width:100%;">Logout</button></form>
     </aside>
     <main class="main">
-        <div class="top"><h1>@yield('title','Admin Dashboard')</h1><div class="admin-pill">User - Admin</div></div>
+        <div class="top">
+            <div class="top-left-heading">
+                <button type="button" id="sidebar-toggle-btn" class="sidebar-toggle-btn" title="Toggle Sidebar" aria-label="Toggle Sidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <h1>@yield('title','Admin Dashboard')</h1>
+            </div>
+            <div class="admin-pill">User - Admin</div>
+        </div>
         @if(session('success'))<div class="alert success">{{ session('success') }}</div>@endif
         @if(session('error'))<div class="alert error">{{ session('error') }}</div>@endif
         @if($errors->any())<div class="alert error"><ul style="margin:0;padding-left:20px;">@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
         @if($errors->any())<div class="card"><ul>@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul></div>@endif @yield('content')
     </main>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const wrap = document.getElementById('admin-wrap');
+    const toggleBtn = document.getElementById('sidebar-toggle-btn');
+    if (toggleBtn && wrap) {
+        toggleBtn.addEventListener('click', function() {
+            wrap.classList.toggle('sidebar-collapsed');
+            localStorage.setItem('admin_sidebar_collapsed', wrap.classList.contains('sidebar-collapsed'));
+        });
+    }
+});
+</script>
+
 @stack('scripts')
 </body>
 </html>

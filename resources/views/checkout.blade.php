@@ -25,7 +25,7 @@
                 <input type="radio" name="payment_method" value="kpay" {{ old('payment_method') === 'kpay' ? 'checked' : '' }} required>
                 <strong style="margin-left:6px;">KBZPay (KPay)</strong>
                 <div style="color:#666;font-size:14px;margin:8px 0 0 24px;line-height:1.6;">
-                    Pay to <strong>{{ config('studio.payment_phone') ?: 'Demo only — configure a payment number' }}</strong><br>
+                    Pay to <strong>{{ config('studio.payment_phone') ?: 'Demo only — configure a payment number' }}</strong>@if(config('studio.payment_name')) · <strong>{{ config('studio.payment_name') }}</strong>@endif<br>
                     Student demo store — screenshot submission is not automatic payment verification.
                 </div>
             </label>

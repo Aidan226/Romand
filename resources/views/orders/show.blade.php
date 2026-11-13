@@ -11,7 +11,7 @@
         <p style="color:#137333; font-weight:600; font-size:14px;">
             🟢 Payment Automatically Verified ({{ number_format($order->slip_detected_amount ?? $order->total_price) }} MMK)
         </p>
-    @elseif($order->slip_verification_status === 'mismatch' || $order->slip_verification_status === 'duplicate')
+    @elseif(in_array($order->slip_verification_status, ['mismatch', 'recipient_mismatch', 'duplicate', 'unreadable']))
         <div style="background:#fce8e6; border:1px solid #fad2cf; color:#c5221f; padding:10px 14px; border-radius:8px; margin:10px 0; font-size:13px;">
             <strong>⚠️ Payment Notice:</strong> {{ $order->slip_verification_notes }}
         </div>

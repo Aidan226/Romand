@@ -5,5 +5,8 @@
 /storage/logs/*
 /storage/framework/views/*
 /storage/framework/sessions/*
+/storage/framework/testing/*
+/.phpunit.result.cache
+/public/storage
 /bootstrap/cache/*.php
 /public/uploads/
